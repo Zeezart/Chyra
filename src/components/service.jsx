@@ -14,7 +14,7 @@ import popularBook3 from "../assets/popular-book (3).svg"
 import popularBook4 from "../assets/popular-book (4).svg"
 import popularBook5 from "../assets/popular-book (5).svg"
 import heart from "../assets/icons/heart.svg"
-import star from "../assets/icons/star 1.svg"
+// import star from "../assets/icons/star 1.svg"
 import libraryImage from "../assets/library-image.svg"
 
 
@@ -118,13 +118,13 @@ function Service(){
                         <p className="small">Whoever said that time heals all wounds.... lied. 
                         A decade after the death of her husband, Nari Yoon still mourns. 
                         On the ten-year anniversary of the worst day of herlife.....read more</p>
-                        <div className="star-rating">
+                        {/* <div className="star-rating">
                             <img src={star} className="star-icon" />
                             <img src={star} className="star-icon" />
                             <img src={star} className="star-icon" />
                             <img src={star} className="star-icon" />
                             <img src={star} className="star-icon" />
-                        </div>
+                        </div> */}
                         <button className="secondarybtn">Add to cart</button>
                     </div>
 
