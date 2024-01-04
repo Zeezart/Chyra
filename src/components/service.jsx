@@ -254,7 +254,7 @@ function Service(){
                 </div>
             </div>
 
-            <div className="best-selling">
+            {/* <div className="best-selling">
                 <h1>Best-Selling Books Collection</h1>
                 <div className="best-selling-books">
                     <div className="best-selling-book">
@@ -287,7 +287,7 @@ function Service(){
                         <p><small>Sarah Crossan</small></p>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </section>
     )
 }
