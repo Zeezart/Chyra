@@ -156,9 +156,18 @@ body{
   display: flex;
   flex-direction: row;
   /* overflow-x: hidden; */
+  overflow-x: auto;
   gap: 1rem;
   scroll-behavior: smooth;
   width: 100%;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Hide scrollbar thumb */
+}
+
+.carousel::-webkit-scrollbar-track {
+  background-color: transparent; /* Hide scrollbar track */
 }
 
 .scroll-btns{
