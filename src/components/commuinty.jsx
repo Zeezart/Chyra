@@ -1,4 +1,4 @@
-import communityBanner from "../assets/community-banner.svg"
+
 import bookIcon from "../assets/icons/book-icon.svg"
 import scatteredBooks from "../assets/scattered-books.svg"
 

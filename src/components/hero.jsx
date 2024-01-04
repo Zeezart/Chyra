@@ -16,7 +16,7 @@ function Hero(){
             </div>
 
             <div className="hero-right">
-                <img src={heroImage} />
+                <img src={heroImage} loading="lazy"/>
             </div>
         </section>
     )
