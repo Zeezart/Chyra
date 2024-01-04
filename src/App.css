@@ -155,7 +155,7 @@ body{
 .carousel{
   display: flex;
   flex-direction: row;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
   gap: 1rem;
   scroll-behavior: smooth;
   width: 100%;
