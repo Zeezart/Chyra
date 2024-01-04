@@ -1,3 +1,4 @@
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa"
 import book1 from "../assets/book (1).svg"
 import book2 from "../assets/book (2).svg"
 import book3 from "../assets/book (3).svg"
@@ -21,40 +22,69 @@ import libraryImage from "../assets/library-image.svg"
 
 
 function Service(){
+
+    const slideLeft = () => {
+        var slider = document.getElementById("slider")
+        slider.scrollLeft = slider.scrollLeft - 500
+    }
+
+    const slideRight = () => {
+        var slider = document.getElementById("slider")
+        slider.scrollLeft = slider.scrollLeft + 500
+    }
+
+    const popularSlideLeft = () => {
+        var popularSlider = document.getElementById("popularSlider")
+        popularSlider.scrollLeft = popularSlider.scrollLeft - 500
+    }
+
+    const popularSlideRight = () => {
+        var popularSlider = document.getElementById("popularSlider")
+        popularSlider.scrollLeft = popularSlider.scrollLeft + 500
+    }
     return(
         <section id="service-section">
             <div className="categories">
                 <h1>We serve ebooks tools unveil<br/>your Imagination</h1>
                 <div className="categories-books">
-                    <div className="category-book">
-                        <img src={book1} />
-                        <p>Bestsellers Book </p>
-                        <p><small>The contents of a book are its different chapters</small></p>
-                    </div>
+                        <div className="category-book">
+                            <img src={book1} />
+                            <p>Bestsellers Book </p>
+                            <p><small>The contents of a book are its different chapters</small></p>
+                        </div>
 
-                    <div className="category-book">
-                        <img src={book2} />
-                        <p>Trending Book </p>
-                        <p><small>The contents of a book are its different chapters</small></p>
-                    </div>
+                        <div className="category-book">
+                            <img src={book2} />
+                            <p>Trending Book </p>
+                            <p><small>The contents of a book are its different chapters</small></p>
+                        </div>
 
-                    <div className="category-book">
-                        <img src={book3} />
-                        <p>Preference Book </p>
-                        <p><small>The contents of a book are its different chapters</small></p>
-                    </div>
+                        <div className="category-book">
+                            <img src={book3} />
+                            <p>Preference Book </p>
+                            <p><small>The contents of a book are its different chapters</small></p>
+                        </div>
 
-                    <div className="category-book">
-                        <img src={book4} />
-                        <p>Worldwide Book </p>
-                        <p><small>The contents of a book are its different chapters</small></p>
-                    </div>
+                        <div className="category-book">
+                            <img src={book4} />
+                            <p>Worldwide Book </p>
+                            <p><small>The contents of a book are its different chapters</small></p>
+                        </div>
+
                 </div>
             </div>
 
             <div className="genre">
-                <h1>Genre</h1>
-                <div className="carousel">
+                <div className="genre-header">
+                    <h1>Genre</h1>
+                    <div className="scroll-btns">
+                        <FaChevronLeft onClick={slideLeft} className="scroll"/>
+                        <FaChevronRight onClick={slideRight} className="scroll"/>
+                    </div>
+                </div>
+                
+                <div className="carousel"  id="slider">
+                    
                     <div className="each-genre">
                         <img src={genreImage1}/>
                         <p>Genre</p>
@@ -104,12 +134,20 @@ function Service(){
                         <img src={genreImage6}/>
                         <p>Genre</p>
                     </div>
+                
                 </div>
             </div>
 
             <div className="popular">
-                <h1>Popular Stories This Week</h1>
-                <div className="popular-books-carousel carousel">
+                
+                <div className="genre-header">
+                    <h1>Popular Stories This Week</h1>
+                    <div className="scroll-btns">
+                        <FaChevronLeft onClick={popularSlideLeft} className="scroll"/>
+                        <FaChevronRight onClick={popularSlideRight} className="scroll"/>
+                    </div>
+                </div>
+                <div className="popular-books-carousel carousel" id="popularSlider">
                     <div className="popular-book">
                         <img src={popularBook1} />
                         <h6>The Secret Widow</h6>
@@ -125,6 +163,36 @@ function Service(){
                             <img src={star} className="star-icon" />
                             <img src={star} className="star-icon" />
                         </div> */}
+                        <button className="secondarybtn">Add to cart</button>
+                    </div>
+
+                    <div className="popular-book">
+                        <img src={popularBook1} />
+                        <h6>The Secret Widow</h6>
+                        <p>Sylvie Fox</p>
+                        <p className="small">Whoever said that time heals all wounds.... lied. 
+                        A decade after the death of her husband, Nari Yoon still mourns. 
+                        On the ten-year anniversary of the worst day of herlife.....read more</p>
+                        <button className="secondarybtn">Add to cart</button>
+                    </div>
+
+                    <div className="popular-book">
+                        <img src={popularBook1} />
+                        <h6>The Secret Widow</h6>
+                        <p>Sylvie Fox</p>
+                        <p className="small">Whoever said that time heals all wounds.... lied. 
+                        A decade after the death of her husband, Nari Yoon still mourns. 
+                        On the ten-year anniversary of the worst day of herlife.....read more</p>
+                        <button className="secondarybtn">Add to cart</button>
+                    </div>
+
+                    <div className="popular-book">
+                        <img src={popularBook1} />
+                        <h6>The Secret Widow</h6>
+                        <p>Sylvie Fox</p>
+                        <p className="small">Whoever said that time heals all wounds.... lied. 
+                        A decade after the death of her husband, Nari Yoon still mourns. 
+                        On the ten-year anniversary of the worst day of herlife.....read more</p>
                         <button className="secondarybtn">Add to cart</button>
                     </div>
 
