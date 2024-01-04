@@ -1,5 +1,6 @@
 import communityBanner from "../assets/community-banner.svg"
 import bookIcon from "../assets/icons/book-icon.svg"
+import scatteredBooks from "../assets/scattered-books.svg"
 
 function Community(){
     return(
@@ -60,8 +61,11 @@ function Community(){
             </div>
 
             <div className="signup">
-                <h3>Start Reading Now</h3>
-                <button className="primarybtn">Sign Up</button>
+                <div className="signup-content">
+                    <h2>Start Reading Now</h2>
+                    <button className="primarybtn">Sign Up</button>
+                </div>
+                <img src={scatteredBooks} />
             </div>
 
         </section>
