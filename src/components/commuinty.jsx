@@ -1,6 +1,7 @@
 
 import bookIcon from "../assets/icons/book-icon.svg"
 import scatteredBooks from "../assets/scattered-books.svg"
+import aboutImage from "../assets/about-image.svg"
 
 function Community(){
     return(
@@ -66,6 +67,20 @@ function Community(){
                     <button className="primarybtn">Sign Up</button>
                 </div>
                 <img src={scatteredBooks} />
+            </div>
+
+            <div className="libraries">
+                <div className="libraries-left">
+                    <img src={aboutImage} />
+                </div>
+
+                <div className="libraries-right">
+                    <h3>About Our Company</h3>
+                    <p>Our goal is to bring together people under one 
+                    atmosphere to share their knowledge, their passion for books and 
+                    provide the space for people with same interest, same common value to relate with one another, 
+                    The Chyra Library provide that space for every individual.</p>
+                </div>
             </div>
 
         </section>

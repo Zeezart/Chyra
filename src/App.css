@@ -156,18 +156,10 @@ body{
   display: flex;
   flex-direction: row;
   /* overflow-x: hidden; */
-  overflow-x: auto;
+  overflow-x: hidden;
   gap: 1rem;
   scroll-behavior: smooth;
   width: 100%;
-}
-
-.carousel::-webkit-scrollbar-thumb {
-  background-color: transparent; /* Hide scrollbar thumb */
-}
-
-.carousel::-webkit-scrollbar-track {
-  background-color: transparent; /* Hide scrollbar track */
 }
 
 .scroll-btns{
@@ -362,6 +354,46 @@ font-size: 1.5rem;
   width: 100%;
 }
 
+#community .libraries{
+  padding: 4rem;
+}
+
+.footer{
+  padding: 4rem;
+  background-color: var(--primary-color-orange);
+}
+
+.footer img{
+  display: inline;
+  width: 10rem;
+  margin-right: 1rem;
+}
+.footer-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  
+}
+.footer-table{
+  /* display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #fff; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 10px;
+  grid-column-gap: 20px;
+  color: #fff;
+  flex: 2;
+}
+
+.footer-content p{
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
 
 @media screen and (max-width: 1000px){
   .nav-links,#navbar .primarybtn{
@@ -435,6 +467,18 @@ font-size: 1.5rem;
     width: 100%;
   }
 
+  .carousel{
+    overflow-x: auto;
+  }
+  
+  .carousel::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hide scrollbar thumb */
+  }
+  
+  .carousel::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide scrollbar track */
+  }
+
   .scroll-btns{
     display: none;
   }
@@ -461,5 +505,29 @@ font-size: 1.5rem;
   }
   .signup-content{
     top: 0.5rem;
+  }
+
+  .footer{
+    padding: 1rem;
+  }
+  
+  .footer-content{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .footer-table{
+    /* display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #fff; */
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 20px;
+    color: #fff;
+    flex: 1;
   }
 }

@@ -3,6 +3,7 @@ import Hero from './components/hero'
 import './App.css'
 import Service from './components/service'
 import Community from './components/commuinty'
+import Footer from './components/footer'
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
       <Hero />
       <Service />
       <Community />
+      <Footer />
     </>
   )
 }
