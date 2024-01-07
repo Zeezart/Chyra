@@ -1,9 +1,7 @@
 import Navbar from './components/navbar'
-import Hero from './components/hero'
 import './App.css'
-import Service from './components/service'
-import Community from './components/commuinty'
 import Footer from './components/footer'
+import LandingPage from './components/landingPage'
 
 function App() {
 
@@ -17,9 +15,7 @@ function App() {
   return (
     <>
       <Navbar />
-      <Hero />
-      <Service />
-      <Community />
+      <LandingPage />
       <Footer />
     </>
   )
