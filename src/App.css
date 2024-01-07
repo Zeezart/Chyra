@@ -62,9 +62,12 @@ body{
 
 /* STYLING HERO PAGE */
 #hero-section{
+  padding: 1rem 4rem;
+}
+
+.hero-header{
   display: flex;
   flex-direction: row;
-  padding: 1rem 4rem;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
@@ -394,7 +397,45 @@ font-size: 1.5rem;
   margin-bottom: 24px;
 }
 
+/* STYLING BOOK SEARCH RESULT */
+.each-book-detail{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid rgba(175, 175, 175, 0.788);
+  margin-top: 1rem;
+  padding: 2rem;
+}
 
+.book-image{
+  height: 100%;
+}
+
+.book-author{
+  color: #FF630B;
+}
+.book-detail .book-description{
+  font-size: 0.95rem;
+  margin: 1rem 0;
+  text-align: justify;
+  width: 75%;
+}
+
+.right-hand-details{
+ float: right;
+ margin-top: 1rem;
+ p{
+  display: inline-block;
+  margin-left: 12px ;
+  font-size: 0.8rem;
+  font-style: italic;
+  span{
+    color: var(--primary-color-orange);
+    font-weight: bold;
+  }
+ } 
+}
 @media screen and (max-width: 1000px){
   .nav-links,#navbar .primarybtn{
     display: none;
@@ -404,7 +445,7 @@ font-size: 1.5rem;
     padding: 1rem;
   }
 
-  #hero-section img{
+  .hero-header img{
     width: 100%;
     margin: 1rem;
   }
@@ -453,7 +494,7 @@ font-size: 1.5rem;
     background-color: #cfcfcf;
   }
 
-  #hero-section{
+  .hero-header{
     display: flex;
     flex-direction: column-reverse;
     text-align: center;
