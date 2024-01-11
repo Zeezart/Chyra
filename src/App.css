@@ -398,6 +398,9 @@ font-size: 1.5rem;
 }
 
 /* STYLING BOOK SEARCH RESULT */
+.book-search-result-details{
+  position: relative;
+}
 .each-book-detail{
   display: flex;
   flex-direction: row;
@@ -408,6 +411,9 @@ font-size: 1.5rem;
   padding: 2rem;
 }
 
+.each-book-detail:hover{
+  transform: scale(0.9);
+}
 .book-image{
   height: 100%;
 }
@@ -436,7 +442,17 @@ font-size: 1.5rem;
   }
  } 
 }
-@media screen and (max-width: 800px){
+
+.book-info-popUp{
+  background-color: #FFF;
+  box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
+  margin: 1rem;
+  padding: 1rem 2rem;
+  position: absolute;
+  max-height: 50vh;
+  overflow-y: auto;
+}
+@media screen and (max-width: 1000px){
   .nav-links,#navbar .primarybtn{
     display: none;
   }

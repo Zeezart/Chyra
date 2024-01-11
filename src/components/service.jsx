@@ -87,27 +87,27 @@ function Service(){
                     
                     <div className="each-genre">
                         <img src={genreImage1}/>
-                        <p>Genre</p>
+                        <p>Horror</p>
                     </div>
 
                     <div className="each-genre">
                         <img src={genreImage2}/>
-                        <p>Genre</p>
+                        <p>Sci-fi</p>
                     </div>
 
                     <div className="each-genre">
                         <img src={genreImage3}/>
-                        <p>Genre</p>
+                        <p>Romance</p>
                     </div>
 
                     <div className="each-genre">
                         <img src={genreImage4}/>
-                        <p>Genre</p>
+                        <p>Fantasy</p>
                     </div>
 
                     <div className="each-genre">
                         <img src={genreImage5}/>
-                        <p>Genre</p>
+                        <p>History</p>
                     </div>
 
                     <div className="each-genre">

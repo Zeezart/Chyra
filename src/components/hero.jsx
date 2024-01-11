@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import heroImage from "../assets/hero-image.svg"
 import axios from "axios"
 import BookImage from "./bookImages"
@@ -14,7 +14,7 @@ function Hero(){
         setBook(bookSearch)
     }
 
-      const handleSearch = async() => {
+    const handleSearch = async(e) => {
         
         console.log(book)
         const apiKey = "AIzaSyA_KeICDW5MCHF3qAgsgtT-mcB0aWfQlpM"
@@ -28,6 +28,29 @@ function Hero(){
             console.error(error)
         }
     }
+
+    const handleKeyDown = (event) =>{
+        
+        if (event.key === "Enter"){
+            handleSearch()
+        }
+    }
+    const [scrollTopValue, setScrollTopValue] = useState("")
+    useEffect(() => {
+        const handleScroll = () => {
+          const scrollTopValue = window.scrollY;
+          setScrollTopValue(scrollTopValue)
+        };
+    
+        // Attach the event listener
+        window.addEventListener('scroll', handleScroll);
+    
+        // Detach the event listener when the component is unmounted
+        return () => {
+          window.removeEventListener('scroll', handleScroll);
+        };
+    })
+    
     return(
         <section id="hero-section">
             <section className="hero-header">
@@ -42,8 +65,9 @@ function Hero(){
                         name="search" 
                         placeholder="Search by book title, author name"
                         onChange={handleChange}   
+                        onKeyDown={handleKeyDown}
                         />
-                        <button className="primarybtn" onClick={handleSearch}>Search</button>
+                        <button className="primarybtn" onClick={handleSearch} >Search</button>
                     </div>
                 </div>
 
@@ -55,6 +79,7 @@ function Hero(){
             <section className="book-result">
                 <BookImage 
                     result = {result}
+                    scrollTopValue = {scrollTopValue}
                 />
             </section>
         </section>
