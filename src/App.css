@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,800;0,900;1,300;1,500;1,800&display=swap');
 
 :root{
-  --primary-color-orange: #FF630B;
+  --primary-color-orange: hsl(22, 100%, 52%);
   --text-color-gray: #3A3B3B;
 }
 
@@ -44,6 +44,12 @@ body{
   font-weight: 700;
 }
 
+.signinbtn{
+  display: flex; 
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
 .primarybtn{
   background-color: var(--primary-color-orange);
   outline: none;
@@ -52,6 +58,15 @@ body{
   padding: 1rem 2rem;
   font: inherit;
   font-size: inherit;
+  color: white;
+}
+
+.primarybtn:hover{
+  background-color: #d65103;
+}
+
+.secondarybtn:hover{
+  background-color: var(--primary-color-orange);
   color: white;
 }
 
@@ -452,8 +467,108 @@ font-size: 1.5rem;
   max-height: 50vh;
   overflow-y: auto;
 }
+
+
+
+/* STYLING THE REGISTER SECTION */
+#register-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 3rem;
+  align-items: center;
+  gap: 2rem;
+  .welcome-message{
+    height: 100vh;
+    text-align: center;
+    padding: auto auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FF975C;
+    color: #fff;
+    width: 100%;
+    border-radius: 0 100px 0 100px;
+  }
+
+  .welcome-message-text{
+    margin: auto auto;
+  }
+  .register-form{
+    width: 100%;
+    h3{
+      color: #FF630B;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    p{
+      margin-bottom: 1rem;
+    }
+  }
+
+  form label{
+    color: #AA4207;
+    
+  }
+  form input{
+    padding: 1rem 2rem;
+    width: 100%;
+    border-radius: 5px;
+    border:1px solid #898989;
+    font: inherit;
+    margin-bottom: 1rem;
+  }
+  
+  .or{
+    text-align: center;
+    margin-top: 1rem;
+    color: #626262;
+  }
+  button{
+    width: 100%;
+  }
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1000px){
-  .nav-links,#navbar .primarybtn{
+  .nav-links,#navbar .signinbtn{
     display: none;
   }
 
@@ -598,5 +713,14 @@ font-size: 1.5rem;
 
   .book-detail .book-description{
     width: 100%;
+  }
+  #register-section{
+    display: block;
+    .welcome-message{
+      display: none;
+      .welcome-message-text{
+        display: none;
+      }
+    }
   }
 }
