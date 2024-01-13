@@ -116,7 +116,7 @@ body{
   margin: 0 0 6rem 0;
 }
 
-.hero-left .search-input{
+.search-input{
   border-radius: 12px;
   border: 1px solid var(--gray-20, #B0B1B1);
   padding: 0.75rem 0.87rem;
@@ -539,7 +539,7 @@ font-size: 1.5rem;
   flex-direction: row;
   justify-content: space;
   padding: 1rem 3rem;
-  gap: 2rem;
+  gap: 4rem;
   .library-section-side-navbar{
     display: flex;
     flex-direction: column;
@@ -580,10 +580,65 @@ font-size: 1.5rem;
     }
   }
   .books-in-library{
-    flex: 4;
-    background-color: #FF975C;
-    width: 100%;
-    height: 100vh;
+    flex: 3;
+    .library-banner{
+      width: 100%;
+      border-radius: 20px;
+      background-color: #41BBD6;
+      color: white;
+      padding: 3rem ;
+      background-image: url('./assets/library-banner-image.png');
+      background-size: cover;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      h2{
+        font-size: 3rem;
+      }
+      img{
+        width: 12.5rem;
+        height: 18.9rem;
+      }
+    }
+
+    .added-books{
+      margin: 2rem 0;
+      position: relative;
+      h3{
+        color: var(--orange-60, #FF630B);
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+      .add-new-book{
+        background-color: #dfdfdf;
+        display: inline-block;
+        padding: 4rem 3rem;
+        border-radius: 12px;
+        .add-icon-circle{
+          border-radius: 50%;
+          background-color: #b6b6b6;
+          padding: 1rem;
+          display: inline-block;
+          .add-icon{
+            font-size: 3rem;
+            margin: 0;
+            padding: 0;
+            color: #888888;
+          }
+        }
+      }
+      .library-search{
+        position: absolute;
+        top: 50px;
+        left: 20px;
+        background-color: white;
+        z-index: 1;
+        width: 50%;
+        margin: auto auto;
+      }
+    }
   }
 }
 
@@ -632,6 +687,7 @@ font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1rem;
   }
   #navbar, #hero-section, #service-section{
     padding: 1rem;
@@ -750,11 +806,6 @@ font-size: 1.5rem;
     
   }
   .footer-table{
-    /* display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-start;
-    color: #fff; */
     margin: 2rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -777,6 +828,7 @@ font-size: 1.5rem;
   }
   #register-section{
     display: block;
+    padding: 1rem;
     .welcome-message{
       display: none;
       .welcome-message-text{
