@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { Link } from "react-router-dom"
 import { FaGoogle } from "react-icons/fa"
 import { auth } from "../../firebase"
 import { signInWithEmailAndPassword } from "firebase/auth"
@@ -67,7 +68,7 @@ function Login(){
                 </form>
                 <p className="or">or</p>
                 <button className="secondarybtn" type="submit"><FaGoogle/>Sign in with Google</button>
-                <p style={{marginTop:"1rem", textAlign:"right"}}><small>Not registered? Sign up</small></p>
+                <p style={{marginTop:"1rem", textAlign:"right"}}><small>Not Registered?<Link to="/signup"><span style={{color:"#3A3B3B", textDecoration:"underline", cursor:"pointer"}} >Sign Up</span></Link></small></p>
             </div>
         </section>
     )
