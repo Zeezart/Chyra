@@ -13,11 +13,8 @@ function SearchInput(props){
     }
 
     const handleSearch = async(e) => {
-        
-        console.log(book)
         const apiKey = "AIzaSyA_KeICDW5MCHF3qAgsgtT-mcB0aWfQlpM"
         const url = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=" + apiKey
-        console.log(url)
         try{
             const response = await axios.get(url)
             props.setResult(response.data.items)

@@ -32,12 +32,18 @@ function MyLibrary(){
           document.removeEventListener('click', handleClickOutside);
         };
       }, []);
-
-    const [addedBook, setAddedBook] = useState([])
     
-    function handleAddBook(){
-        
-    }
+    const [addedBooks, setAddedBooks] = useState([])
+    console.log(addedBooks[0])
+    
+    const bookList = addedBooks.map((eachbook,index) => {
+       console.log(eachbook)
+        return(
+            <div>
+             {eachbook !== undefined && eachbook.length > 0 ? <h1>{eachbook.id}</h1> : <h1>{typeof eachbook}</h1>}
+            </div>
+        )
+    })
 
     return(
         <section id="my-library-section">
@@ -74,6 +80,7 @@ function MyLibrary(){
 
                 <div className="added-books">
                     <h3>My Library</h3>
+                    {addedBooks !== undefined && addedBooks.length > 0 ? bookList : null}
                     <div className="add-new-book" onClick={handleSearch}>
                         <div className="add-icon-circle">
                             <FaPlus className="add-icon" />
@@ -84,7 +91,8 @@ function MyLibrary(){
                         <SearchInput setResult={setResult}/>
                         <LibrarySearch 
                             result = {result}
-                            onClick= {handleAddBook}
+                            
+                            setAddedBooks={setAddedBooks}
                         />
                     </div>}
                 </div>
