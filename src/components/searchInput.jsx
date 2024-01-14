@@ -4,7 +4,7 @@ import axios from "axios"
 function SearchInput(props){
 
     const [book, setBook] = useState("")
-    const [result, setResult] = useState([])
+    // const [result, setResult] = useState([])
 
     const handleChange = (e) => {
         const bookTyped = e.target.value
@@ -21,7 +21,7 @@ function SearchInput(props){
         try{
             const response = await axios.get(url)
             props.setResult(response.data.items)
-            console.log(result)
+            // console.log(result)
         }catch(error){
             console.error(error)
         }

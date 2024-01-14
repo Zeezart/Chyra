@@ -38,8 +38,6 @@ function BookImage(props){
                 )
             })}
                         {popUp && <BookInfoPopUp popUp={setPopUp} bookInfo = {bookInfo} scrollValue = {props.scrollTopValue}/>}
-
-        <p>Show all</p>
         </div>
     )
 }

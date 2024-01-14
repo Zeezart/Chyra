@@ -1,16 +1,44 @@
-import React, { useState } from "react"
+import React, { useState,useEffect } from "react"
 import avatar from "../assets/avatar.jfif"
 import divergent from "../assets/divergent.jfif"
 import genreImage6 from "../assets/genre-image (6).svg"
 import { FaPlus } from "react-icons/fa"
 import SearchInput from "./searchInput"
+import LibrarySearch from "./librarysearch"
 
 function MyLibrary(){
 
     const [add, setAdd] = useState(false)
     function handleSearch(){
-        setAdd(!add)
+        setAdd(true)
     }
+
+    const [result, setResult] = useState([])
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          // Check if the click occurred outside the popup
+          if (add && !event.target.closest('.library-search')) {
+            setAdd(false);
+        }
+        console.log(add)
+        };
+    
+        // Add click event listener to the document
+        document.addEventListener('click', handleClickOutside);
+    
+        // Cleanup the event listener on component unmount
+        return () => {
+          document.removeEventListener('click', handleClickOutside);
+        };
+      }, []);
+
+    const [addedBook, setAddedBook] = useState([])
+    
+    function handleAddBook(){
+        
+    }
+
     return(
         <section id="my-library-section">
             <div className="library-section-side-navbar">
@@ -51,9 +79,14 @@ function MyLibrary(){
                             <FaPlus className="add-icon" />
                         </div>
                     </div>
-                    <div  className="library-search">
-                        {add && <SearchInput/>}
-                    </div>
+
+                    {add && <div  className="library-search">
+                        <SearchInput setResult={setResult}/>
+                        <LibrarySearch 
+                            result = {result}
+                            onClick= {handleAddBook}
+                        />
+                    </div>}
                 </div>
             </div>
         </section>
