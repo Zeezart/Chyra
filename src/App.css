@@ -74,6 +74,7 @@ body{
   display: none;
 }
 
+
 .signinbtnmobile{
   display: none;
 }
@@ -121,6 +122,7 @@ body{
   border: 1px solid var(--gray-20, #B0B1B1);
   padding: 0.75rem 0.87rem;
   display: flex;
+  background-color: white;
 }
 
 .search-input input{
@@ -540,6 +542,9 @@ font-size: 1.5rem;
   justify-content: space;
   padding: 1rem 3rem;
   gap: 4rem;
+  .library-togglebtn{
+    display: none;
+  }
   .library-section-side-navbar{
     display: flex;
     flex-direction: column;
@@ -560,7 +565,7 @@ font-size: 1.5rem;
         margin: 1rem 0;
       }
     }
-    nav ul li{
+    .sidenav li{
       list-style: none;
       margin:  auto auto;
       margin-bottom: 1rem;
@@ -633,9 +638,9 @@ font-size: 1.5rem;
         position: absolute;
         top: 50px;
         left: 20px;
-        background-color: white;
+        /* background-color: white; */
         z-index: 1;
-        width: 50%;
+        width: 100%;
         margin: auto auto;
       }
     }
@@ -682,8 +687,9 @@ font-size: 1.5rem;
 
 
 
+
 @media screen and (max-width: 1000px){
-  .nav-links,#navbar .signinbtn{
+  .nav-links,#navbar .signinbtn,#my-library-section .library-section-side-navbar{
     display: none;
   }
 
@@ -724,6 +730,8 @@ font-size: 1.5rem;
     padding: 0;
   }
 
+  
+
   .open{
     display: flex;
     flex-direction: column;
@@ -745,6 +753,7 @@ font-size: 1.5rem;
   .open li:hover{
     background-color: #cfcfcf;
   }
+  
 
   .hero-header{
     display: flex;
@@ -840,4 +849,45 @@ font-size: 1.5rem;
       }
     }
   }
+  #my-library-section{
+    padding: 1rem;
+    display: block;
+    .library-togglebtn{
+      display: block;
+      font-size: 1.4rem;
+      color: var(--text-color-gray);
+      margin: 0;
+      padding: 0;
+    }
+    .books-in-library{
+      flex: 3;
+      .library-banner{
+        padding: 1rem ;
+        h2{
+          font-size: 2rem;
+        }
+        img{
+          width: 12.5rem;
+          height: 18.9rem;
+        }
+      }
+    .open-sidenav{
+      display: block;
+      width: 60%;
+      text-align: left;
+      position: absolute;
+      padding: 2rem;
+      top: 200px;
+      left: 0;
+      gap: 0;
+      background-color: rgb(245, 245, 245); 
+      color: #fff;
+      transition: opacity 0.3s ease-in-out;
+      z-index: 100;
+    }
+    .library-search{
+      width: 100%;
+    }
+  }
+}
 }

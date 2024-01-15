@@ -17,20 +17,9 @@ function App() {
   // }
   // window.addEventListener('resize', handleResize);
   // handleResize();
-  // const [displayPage, setDisplayPage ] = useState(<LandingPage />)
-  // function handleClick(){
-  //   setDisplayPage(<Register/>)
-  // }
-
-  // function handleLoginButton(){
-  //   setDisplayPage(<Login/>)
-  // }
-  
   
   return (
     <>
-      {/* <Navbar handleClick={handleClick} handleLoginButton={handleLoginButton}/> */}
-      <Navbar/>
       <Routes>
         <Route path="/" exact element={<LandingPage/>}></Route>
         <Route path="/signin"  element={<Login/>}></Route>
@@ -38,12 +27,6 @@ function App() {
         <Route path="/library"  element={<MyLibrary/>}></Route>
         <Route path="/"  element={<LandingPage/>}></Route>
       </Routes>
-      {/* <Register />
-      <Login />
-      <AuthDetails /> */}
-      {/* {displayPage} */}
-      {/* <LandingPage /> */}
-      <Footer />
     </>
   )
 }

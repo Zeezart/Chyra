@@ -2,7 +2,7 @@ import React, { useState,useEffect } from "react"
 import avatar from "../assets/avatar.jfif"
 import divergent from "../assets/divergent.jfif"
 import genreImage6 from "../assets/genre-image (6).svg"
-import { FaPlus } from "react-icons/fa"
+import { FaPlus, FaTimes, FaBars } from "react-icons/fa"
 import SearchInput from "./searchInput"
 import LibrarySearch from "./librarysearch"
 
@@ -14,6 +14,7 @@ function MyLibrary(){
     }
 
     const [result, setResult] = useState([])
+    const [displayResult, setDisplayResult] =useState(false)
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -45,16 +46,32 @@ function MyLibrary(){
         )
     })
 
+
+    const [toggle, setToggle] = useState(false)
+    // const [activePage, setActivePage] = useState(<Home />)
+
+    function handleToggle(){
+        setToggle(!toggle)
+    }
+
+    function handleClose(){
+        setAdd(false)
+    }
     return(
         <section id="my-library-section">
-            <div className="library-section-side-navbar">
+                <div onClick={handleToggle} className="library-togglebtn">
+                    {toggle ? <FaTimes/> : <FaBars />}
+                </div>
+            <div  className={`library-section-side-navbar ${toggle ? 'open-sidenav' : ''}`}>
+            {/* <div  className="library-section-side-navbar"> */}
                 <div className="profile">
                     <img className="avatar" src={avatar} />
                     <p>Zhie Za</p>
                 </div>
                 <hr></hr>
-                <nav>
-                    <ul>
+                <nav >
+                    {/* <ul className={`sidenav ${toggle ? 'open-sidenav' : ''}`}> */}
+                    <ul className="sidenav">
                         <li>My Library</li>
                         <li>Favorite</li>
                         <li>My Community</li>
@@ -67,6 +84,7 @@ function MyLibrary(){
                         <li>Log out</li>
                     </ul>
                 </nav>
+
             </div>
             <div className="books-in-library">
                 <div className="library-banner">
@@ -88,12 +106,12 @@ function MyLibrary(){
                     </div>
 
                     {add && <div  className="library-search">
-                        <SearchInput setResult={setResult}/>
-                        <LibrarySearch 
+                        <FaTimes onClick={handleClose}/>
+                    <SearchInput setResult={setResult} setDisplayResult={setDisplayResult}/>
+                        {displayResult && <LibrarySearch 
                             result = {result}
-                            
                             setAddedBooks={setAddedBooks}
-                        />
+                        />}
                     </div>}
                 </div>
             </div>

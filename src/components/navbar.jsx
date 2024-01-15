@@ -39,11 +39,6 @@ function Navbar(){
                         
                     </nav>
                 
-           
-            {/* <div className="signinbtn" >
-                <p style={{color:"#3A3B3B", textDecoration:"underline", cursor:"pointer"}} onClick={props.handleLoginButton}>Login</p>
-                <button className="primarybtn" onClick={props.handleClick}>Sign up</button>
-            </div> */}
             <div className="signinbtn" >
                 <Link to="/signin"><p style={{color:"#3A3B3B", textDecoration:"underline", cursor:"pointer"}} >Login</p></Link>
                 <Link to="/signup"><button className="primarybtn" >Sign up</button></Link>

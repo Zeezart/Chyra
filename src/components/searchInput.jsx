@@ -19,6 +19,7 @@ function SearchInput(props){
             const response = await axios.get(url)
             props.setResult(response.data.items)
             // console.log(result)
+            props.setDisplayResult(true)
         }catch(error){
             console.error(error)
         }
