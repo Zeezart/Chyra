@@ -16,24 +16,7 @@ function MyLibrary(){
     const [result, setResult] = useState([])
     const [displayResult, setDisplayResult] =useState(false)
 
-    useEffect(() => {
-        const handleClickOutside = (event) => {
-          // Check if the click occurred outside the popup
-          if (add && !event.target.closest('.library-search')) {
-            setAdd(false);
-        }
-        console.log(add)
-        };
-    
-        // Add click event listener to the document
-        document.addEventListener('click', handleClickOutside);
-    
-        // Cleanup the event listener on component unmount
-        return () => {
-          document.removeEventListener('click', handleClickOutside);
-        };
-      }, []);
-    
+ 
     const [addedBooks, setAddedBooks] = useState([])
     console.log(addedBooks[0])
     

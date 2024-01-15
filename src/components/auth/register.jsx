@@ -85,7 +85,7 @@ function Register(){
                     <p style={{marginTop:"1rem", textAlign:"right"}}><small>Already have an account? <Link to="/signin"><span style={{color:"#3A3B3B", textDecoration:"underline", cursor:"pointer"}} >Login</span></Link></small></p>
                 </div>
             </section>
-            <Footer />
+            <Footer/>
         </>
     )
 }

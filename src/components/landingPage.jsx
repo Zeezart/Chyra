@@ -9,7 +9,7 @@ function LandingPage(){
             <Hero />
             <Service />
             <Community />
-      
+            <Footer />
         </>
     )
 }
