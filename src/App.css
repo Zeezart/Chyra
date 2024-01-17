@@ -616,10 +616,24 @@ font-size: 1.5rem;
         font-weight: 600;
         margin-bottom: 1rem;
       }
+      .book-shelf{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        flex-wrap: wrap;
+        align-items: center;
+        div{
+          img{
+            border-radius: 5px;
+            width: 128px;
+            height: 198px;
+          }
+        }
+      }
       .add-new-book{
         background-color: #dfdfdf;
         display: inline-block;
-        padding: 4rem 3rem;
+        padding: 3rem 2rem;
         border-radius: 12px;
         .add-icon-circle{
           border-radius: 50%;
@@ -808,7 +822,9 @@ font-size: 1.5rem;
   .signup-content{
     top: 0.5rem;
   }
-
+  #register-section .footer{
+    display: none;
+  }
   .footer{
     padding: 1rem;
   }
@@ -871,23 +887,23 @@ font-size: 1.5rem;
           height: 18.9rem;
         }
       }
-    .open-sidenav{
-      display: block;
-      width: 60%;
-      text-align: left;
-      position: absolute;
-      padding: 2rem;
-      top: 200px;
-      left: 0;
-      gap: 0;
-      background-color: rgb(245, 245, 245); 
-      color: #fff;
-      transition: opacity 0.3s ease-in-out;
-      z-index: 100;
-    }
-    .library-search{
-      width: 100%;
+      .library-search{
+        width: 100%;
+      }
     }
   }
-}
+  .open-sidenav{
+    display: block;
+    width: 60%;
+    text-align: left;
+    position: absolute;
+    padding: 2rem;
+    top: 200px;
+    left: 0;
+    gap: 0;
+    background-color: rgb(245, 245, 245); 
+    color: #fff;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 100;
+  }
 }

@@ -23,15 +23,17 @@ function Login(){
         })
     }
 
-    function handleLogin(e){
+    const [error, setError] =useState(false)
+    async function handleLogin(e){
         //do something
         e.preventDefault()
-        signInWithEmailAndPassword(auth,loginInfo.email,loginInfo.password)
-        .then((userCredential) => {
-            console.log(userCredential)
-        }).catch((error)=>{
+        try{
+            await signInWithEmailAndPassword(auth,loginInfo.email,loginInfo.password)
+            console.log(auth?.currentUser?.email)
+        }catch{(error)=>{
             console.log(error)
-        })
+            setError(true)
+        }}
     }
     return(
         <>
@@ -46,8 +48,8 @@ function Login(){
                 <div className="register-form">
                     <form onSubmit={handleLogin}>
                         <h3>Log in</h3>
-                        <p>Welcome back</p>
-                    
+                        {error&&<p>Incorrect login credentials</p>}
+                        <p>{error}</p>
                         <label>Email Address</label>
                         <input 
                             type="email" 

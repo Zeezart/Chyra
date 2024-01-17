@@ -18,7 +18,7 @@ function LibrarySearch(props){
         <div style={{display:"flex",flexDirection:"column",padding:"1rem", gap:"1rem", border:"1px solid gray", marginTop:"1rem", maxHeight:"50vh",overflowY:"auto", backgroundColor:"#fff"}} >
             
             {props.result.map(element => {
-                const bookImage = element.volumeInfo.imageLinks.thumbnail
+                const bookImage = element?.volumeInfo?.imageLinks?.thumbnail
                 const elementid = element
                 return(
                     <>

@@ -10,7 +10,7 @@ import Footer from "../footer"
 function Register(){
 
     const [signUpInfo, setSignUpInfo] = useState({
-        username:"",
+        displayName:"",
         email:"",
         password:""
     })
@@ -24,16 +24,17 @@ function Register(){
             }
         })
     }
-
-    function handleRegister(e){
+    const [error, setError] = useState(false)
+    async function handleRegister(e){
         //do something
         e.preventDefault()
-        createUserWithEmailAndPassword(auth,signUpInfo.email,signUpInfo.password)
-        .then((userCredential) => {
-            console.log(userCredential)
-        }).catch((error)=>{
+        try{
+            await createUserWithEmailAndPassword(auth,signUpInfo.email,signUpInfo.password)
+            console.log(auth?.currentUser)
+        }catch{(error)=>{
             console.log(error)
-        })
+            setError(true)
+        }}
     }
     return(
         <>
@@ -49,14 +50,15 @@ function Register(){
                     <form onSubmit={handleRegister}>
                         <h3>Sign Up</h3>
                         <p>Create your own universe of your own Books collection</p>
+                        {error&&<p>something happened</p>}
                         <label>Username</label>
                         <input 
                             type="text" 
                             placeholder="Username" 
-                            name='username' 
+                            name='displayName' 
                             onChange={handleChange}
                             className="login-form-input"
-                            value={signUpInfo.username}
+                            value={signUpInfo.displayName}
                         />
                         <label>Email Address</label>
                         <input 

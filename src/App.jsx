@@ -4,10 +4,11 @@ import Footer from './components/footer'
 import LandingPage from './components/landingPage'
 import Register from './components/auth/register'
 import Login from './components/auth/login'
-import AuthDetails from './components/authDetails'
+// import AuthDetails from './components/authDetails'
 import { useState } from 'react'
 import { Router, Routes, Route } from "react-router-dom"
 import MyLibrary from './components/mylibrary'
+import { AuthProvider } from './components/authContext'
 
 function App() {
 
@@ -19,7 +20,7 @@ function App() {
   // handleResize();
   
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route path="/" exact element={<LandingPage/>}></Route>
         <Route path="/signin"  element={<Login/>}></Route>
@@ -27,7 +28,7 @@ function App() {
         <Route path="/library"  element={<MyLibrary/>}></Route>
         <Route path="/"  element={<LandingPage/>}></Route>
       </Routes>
-    </>
+    </AuthProvider>
   )
 }
 

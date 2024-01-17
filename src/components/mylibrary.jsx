@@ -5,6 +5,9 @@ import genreImage6 from "../assets/genre-image (6).svg"
 import { FaPlus, FaTimes, FaBars } from "react-icons/fa"
 import SearchInput from "./searchInput"
 import LibrarySearch from "./librarysearch"
+import { auth } from '../firebase';
+import { signOut } from "firebase/auth"
+
 
 function MyLibrary(){
 
@@ -21,12 +24,16 @@ function MyLibrary(){
     console.log(addedBooks[0])
     
     const bookList = addedBooks.map((eachbook,index) => {
-       console.log(eachbook)
-        return(
-            <div>
-             {eachbook !== undefined && eachbook.length > 0 ? <h1>{eachbook.id}</h1> : <h1>{typeof eachbook}</h1>}
-            </div>
-        )
+       if(eachbook){
+           return(
+               <div>
+                   <img src={eachbook?.volumeInfo?.imageLinks?.thumbnail}/>
+                   <p><small>{eachbook?.volumeInfo?.authors}</small></p>
+               </div>
+           )
+       }else{
+        null
+       }
     })
 
 
@@ -40,6 +47,13 @@ function MyLibrary(){
     function handleClose(){
         setAdd(false)
     }
+    const logout = async () => {
+        try {
+          await signOut(auth);
+        } catch (err) {
+          console.error(err);
+        }
+      };
     return(
         <section id="my-library-section">
                 <div onClick={handleToggle} className="library-togglebtn">
@@ -64,7 +78,7 @@ function MyLibrary(){
                         <hr></hr>
                         <li>Settings</li>
                         <li>Help</li>
-                        <li>Log out</li>
+                        <li onClick={logout}>Log out</li>
                     </ul>
                 </nav>
 
@@ -81,10 +95,12 @@ function MyLibrary(){
 
                 <div className="added-books">
                     <h3>My Library</h3>
-                    {addedBooks !== undefined && addedBooks.length > 0 ? bookList : null}
-                    <div className="add-new-book" onClick={handleSearch}>
-                        <div className="add-icon-circle">
-                            <FaPlus className="add-icon" />
+                    <div className="book-shelf">
+                        {bookList}
+                        <div className="add-new-book" onClick={handleSearch}>
+                            <div className="add-icon-circle">
+                                <FaPlus className="add-icon" />
+                            </div>
                         </div>
                     </div>
 
