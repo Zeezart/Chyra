@@ -53,6 +53,7 @@ function MyLibrary(){
         } catch (err) {
           console.error(err);
         }
+        
       };
     return(
         <section id="my-library-section">
@@ -66,6 +67,9 @@ function MyLibrary(){
                     <p>Zhie Za</p>
                 </div>
                 <hr></hr>
+                <div>
+                    <h1>DELETE THIS SECTION</h1>
+                </div>
                 <nav >
                     {/* <ul className={`sidenav ${toggle ? 'open-sidenav' : ''}`}> */}
                     <ul className="sidenav">
