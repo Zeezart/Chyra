@@ -7,6 +7,7 @@ import SearchInput from "./searchInput"
 import LibrarySearch from "./librarysearch"
 import { auth } from '../firebase';
 import { signOut } from "firebase/auth"
+import banner from "../assets/library-banner-image.png"
 
 
 function MyLibrary(){
@@ -61,17 +62,12 @@ function MyLibrary(){
                     {toggle ? <FaTimes/> : <FaBars />}
                 </div>
             <div  className={`library-section-side-navbar ${toggle ? 'open-sidenav' : ''}`}>
-            {/* <div  className="library-section-side-navbar"> */}
                 <div className="profile">
                     <img className="avatar" src={avatar} />
                     <p>Zhie Za</p>
                 </div>
                 <hr></hr>
-                <div>
-                    <h1>DELETE THIS SECTION</h1>
-                </div>
                 <nav >
-                    {/* <ul className={`sidenav ${toggle ? 'open-sidenav' : ''}`}> */}
                     <ul className="sidenav">
                         <li>My Library</li>
                         <li>Favorite</li>
@@ -88,7 +84,7 @@ function MyLibrary(){
 
             </div>
             <div className="books-in-library">
-                <div className="library-banner">
+                <div className="library-banner" style={{backgroundImage:`${banner}`}}>
                     <div>
                         <h2>Veronica Roth</h2>
                         <h2>Divergent</h2>
