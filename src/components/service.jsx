@@ -17,6 +17,7 @@ import popularBook5 from "../assets/popular-book (5).svg"
 import heart from "../assets/icons/heart.svg"
 // import star from "../assets/icons/star 1.svg"
 import libraryImage from "../assets/library-image.svg"
+import 'aos/dist/aos.css'
 
 
 
@@ -47,25 +48,25 @@ function Service(){
             <div className="categories">
                 <h1>We serve ebooks tools unveil<br/>your Imagination</h1>
                 <div className="categories-books">
-                        <div className="category-book">
+                        <div className="category-book" data-aos="fade-up">
                             <img src={book1} />
                             <p>Bestsellers Book </p>
                             <p><small>The contents of a book are its different chapters</small></p>
                         </div>
 
-                        <div className="category-book">
+                        <div className="category-book" data-aos="fade-up">
                             <img src={book2} />
                             <p>Trending Book </p>
                             <p><small>The contents of a book are its different chapters</small></p>
                         </div>
 
-                        <div className="category-book">
+                        <div className="category-book" data-aos="fade-up">
                             <img src={book3} />
                             <p>Preference Book </p>
                             <p><small>The contents of a book are its different chapters</small></p>
                         </div>
 
-                        <div className="category-book">
+                        <div className="category-book" data-aos="fade-up">
                             <img src={book4} />
                             <p>Worldwide Book </p>
                             <p><small>The contents of a book are its different chapters</small></p>
@@ -245,7 +246,7 @@ function Service(){
                     <img src={libraryImage} />
                 </div>
 
-                <div className="libraries-right">
+                <div className="libraries-right" data-aos="fade-up">
                     <h3><span>Our</span> Libraries</h3>
                     <p>Your reading list is a good place to start, but you will be expected to read more widely too. 
                     use chyra to serach for information on your topic, and to find books,

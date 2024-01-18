@@ -5,10 +5,14 @@ import LandingPage from './components/landingPage'
 import Register from './components/auth/register'
 import Login from './components/auth/login'
 // import AuthDetails from './components/authDetails'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Router, Routes, Route } from "react-router-dom"
 import MyLibrary from './components/mylibrary'
 import { AuthProvider } from './components/authContext'
+import AOS from "aos"
+
+
+
 
 function App() {
 
@@ -18,6 +22,10 @@ function App() {
   // }
   // window.addEventListener('resize', handleResize);
   // handleResize();
+
+  useEffect(() => {
+    AOS.init({duration:2000})
+  },[])
   
   return (
     <AuthProvider>

@@ -3,6 +3,8 @@ import bookIcon from "../assets/icons/book-icon.svg"
 import scatteredBooks from "../assets/scattered-books.svg"
 import aboutImage from "../assets/about-image.svg"
 
+import 'aos/dist/aos.css'
+
 function Community(){
     return(
         <section id="community">
@@ -40,7 +42,7 @@ function Community(){
                 </div>
             </div>
 
-            <div className="banner">
+            <div className="banner" data-aos="zoom-in">
                 <div className="banner-content">
                     <h2>Join our community</h2>
                     <p>Learn more with people who share  your common
@@ -61,7 +63,7 @@ function Community(){
                 </div>
             </div>
 
-            <div className="signup">
+            <div className="signup" data-aos="fade-up">
                 <div className="signup-content">
                     <h2>Start Reading Now</h2>
                     <button className="primarybtn">Sign Up</button>
@@ -69,7 +71,7 @@ function Community(){
                 <img src={scatteredBooks} />
             </div>
 
-            <div className="libraries">
+            <div className="libraries" data-aos="fade-up">
                 <div className="libraries-left">
                     <img src={aboutImage} />
                 </div>
