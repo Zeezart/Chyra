@@ -12,8 +12,6 @@ import { AuthProvider } from './components/authContext'
 import AOS from "aos"
 
 
-
-
 function App() {
 
   // function handleResize() {
