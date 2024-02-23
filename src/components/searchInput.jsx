@@ -14,7 +14,7 @@ function SearchInput(props){
     }
 
     const handleSearch = async(e) => {
-        const apiKey = import.meta.env.VITE_REACT_APP_SEARCH_API_KEY
+        const apiKey = "AIzaSyA_KeICDW5MCHF3qAgsgtT-mcB0aWfQlpM"
         const url = "https://www.googleapis.com/books/v1/volumes?q=" + book + "&key=" + apiKey
         try{
             const response = await axios.get(url)

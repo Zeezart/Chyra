@@ -7,7 +7,7 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-apiKey: import.meta.env.VITE_REACT_APP_FRE_API_KEY,
+  apiKey: "AIzaSyA3R5zkB6ITC81vcilmDTC-5uplP_Obhz8",
   authDomain: "chyralib-10c81.firebaseapp.com",
   projectId: "chyralib-10c81",
   storageBucket: "chyralib-10c81.appspot.com",
